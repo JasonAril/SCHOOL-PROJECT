@@ -88,7 +88,7 @@ nav ul li a{
    <table class="table table-bordered">
           <thead>
                 <tr>
-                    <td>Id</td>
+
                      <td>Name</td>
                      <td>TIMEIN</td>
                      <td>TIMEOUT</td>
@@ -108,15 +108,16 @@ nav ul li a{
               if($conn->connect_error){
                   die("Connection failed" .$conn->connect_error);
               }
-              $sql = "SELECT Id,Name,TIMEIN FROM table_attendance WHERE DATE(TIMEIN)=CURDATE()";
+              $sql = "SELECT Name,TIMEIN,LOGDATE,STATUS FROM table_attendance WHERE DATE(TIMEIN)=CURDATE()";
               $query = $conn->query($sql);
               while ($row = $query -> fetch_assoc()){
               ?>
                   <tr>
-                      <td><?php echo $row['Id'];?></td>
+
                       <td><?php echo $row['Name'];?></td>
                       <td><?php echo $row['TIMEIN'];?></td>
                       <td><?php echo $row['TIMEOUT'];?></td>
+                      <td><?php echo $row['LOGDATE'];?></td>
                       <td><?php echo $row['STATUS'];?></td>
                   </tr>
 
@@ -154,4 +155,4 @@ nav ul li a{
 
 </body>
 </html>
- 
+

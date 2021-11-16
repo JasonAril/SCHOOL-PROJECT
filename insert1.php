@@ -24,7 +24,7 @@
         $query=$conn->query($sql);
         ECHO "Successfully inserted";
       }else{
-        $sql ="INSERT INTO table_attendance (Name,TIMEIN,LOGDATE,STATUS) VALUES('$text','$time','$date','IN')";
+        $sql ="INSERT INTO table_attendance (Name,TIMEIN,LOGDATE,STATUS) VALUES('$text','$date','$date','IN')";
         if($conn ->query($sql) ===TRUE){
           ECHO "Successfully inserted";
         }else {
@@ -38,3 +38,4 @@
 $conn->close();
 
  ?>
+

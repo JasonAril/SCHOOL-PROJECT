@@ -5,6 +5,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
 
+
 <style>
 *{
   margin:0;
@@ -12,7 +13,6 @@
 }
 header{
   height:70px;
-  background: #666666;
   padding: 0 50px;
 }
 .nav{
@@ -27,15 +27,19 @@ nav ul li{
   display: inline-block;
 }
 nav ul li a{
+
   text-decoration: none;
   color: #FFFC20;
   font-family: sans-serif;
   font-weight: bold;
   margin: 0 40px;
-  line-height: 70px;
+  line-height: 90px;
   text-transform: uppercase;
 }
 </style>
+
+
+
 
 
 </head>
@@ -58,19 +62,16 @@ nav ul li a{
   <div class='row'>
     <div class ="col-md-12">
       <table>
-      <td>
-        <td>
       <tr height="40px">
       </tr>
     </table>
     </div>
 
 
-    <div class="col-md-6" style="padding:5px;border-radius: 6px;" id="divvideo">
-      <center><p class="login-box-msg">SCAN QR CODE</p></center>
-
+    <div class="col-md-5" style="padding:5px;border-radius: 6px;" id="divvideo">
 
      <video id="preview" width="100%" height="60%" style="border-radius:1px;"></video>
+     <center><p style="color:yellow;font-size:160%;font-family:Arial Black;border:1px; border-style:solid; border-color:#yellow; padding: 10px;box-shadow: 0 0 10px rgba(255,255,0,0.8);">SCAN QR CODE</p></center>
    </div>
    <div class='column'>
      <div class ="col-md-1">
@@ -78,23 +79,39 @@ nav ul li a{
    </div>
 
 
-   <div class="col-md-6">
+   <div class="col-md-7">
      <form action="insert1.php" method="post" class="form-horizontal">
+
      <input type="text" name="text" id="text" readonly="" placeholder="Name Preview" class="form-control">
+
    </form>
-   <div style="border-radius: 5px;padding:5px;background:#fff; width: 115%;" id="divvideo">
 
 
-   <table class="table table-bordered">
-          <thead>
+   <div class='row'>
+     <div class ="col-md-7">
+       <table>
+       <tr height="10px">
+       </tr>
+     </table>
+     </div>
+   </div>
+
+
+
+   <div style="border-radius: 5px;padding:5px;background:#fff; width: 115%;height: 400px;overflow: scroll;">
+   <table class="table-bordered table-striped table-condensed table-fixed ">
+
+          <thead style="position: sticky;top: 0;background: white;">
                 <tr>
-
+                     <td>#</td>
                      <td>Name</td>
                      <td>TIMEIN</td>
                      <td>TIMEOUT</td>
+                      <td>LOGDATE</td>
                      <td>STATUS</td>
                 </tr>
           </thead>
+
 
             <tbody>
               <?php
@@ -108,12 +125,12 @@ nav ul li a{
               if($conn->connect_error){
                   die("Connection failed" .$conn->connect_error);
               }
-              $sql = "SELECT Name,TIMEIN,LOGDATE,STATUS FROM table_attendance WHERE DATE(TIMEIN)=CURDATE()";
+              $sql = "SELECT Id,Name,TIMEIN,TIMEOUT,LOGDATE,STATUS FROM table_attendance WHERE DATE(TIMEIN)=CURDATE()";
               $query = $conn->query($sql);
               while ($row = $query -> fetch_assoc()){
               ?>
                   <tr>
-
+                      <td><?php echo $row['Id'];?></td>
                       <td><?php echo $row['Name'];?></td>
                       <td><?php echo $row['TIMEIN'];?></td>
                       <td><?php echo $row['TIMEOUT'];?></td>
@@ -124,13 +141,12 @@ nav ul li a{
               <?php
               }
               ?>
-
-
             </tbody>
-
-
 </table>
+
 </div>
+
+
    </div>
 </div>
  </div>

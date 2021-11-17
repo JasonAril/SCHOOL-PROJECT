@@ -44,14 +44,13 @@ nav ul li a{
 
 </head>
 <body>
-<body background="media/green.jpg">
+<body background="media/greeny.png">
 
 <header>
   <nav>
-    <img src="media/logo.png" style="width:70px; height:70px;">
+    <img src="media/LOGO small.png" style="width:600px; height:150px;">
     <ul>
 <li><a href="">Home</a></li>
-<li><a href="">Records</a></li>
 <li><a href="">About</a></li>
 </ul>
 </nav>
@@ -171,4 +170,3 @@ nav ul li a{
 
 </body>
 </html>
-

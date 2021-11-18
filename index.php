@@ -148,8 +148,22 @@ nav ul li a{
 
    </div>
 </div>
+<button type="submit" class="btn btn-success pull-right" onclick="Export()">
+   <i class="fa fa-file-excel-o fa-fw"></i> Export to excel
+ </button>
  </div>
 
+ <script>
+ function Export()
+ {
+var conf = confirm("Please confirm if you wish to export the attendance in to Excel File");
+if (conf ==true)
+{
+  window.open("export.php",'_blank');
+}
+
+ }
+ </script>
 
  <script type="text/javascript">
  let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });

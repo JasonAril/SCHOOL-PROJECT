@@ -124,7 +124,7 @@ nav ul li a{
               if($conn->connect_error){
                   die("Connection failed" .$conn->connect_error);
               }
-              $sql = "SELECT Id,Name,TIMEIN,TIMEOUT,LOGDATE,STATUS FROM table_attendance WHERE DATE(TIMEIN)=CURDATE()";
+              $sql = "SELECT Id,Name,TIMEIN,TIMEOUT,LOGDATE,STATUS FROM table_attendance";
               $query = $conn->query($sql);
               while ($row = $query -> fetch_assoc()){
               ?>

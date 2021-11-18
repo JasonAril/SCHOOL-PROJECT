@@ -19,23 +19,6 @@ header{
   width: 68%;
   float:right;
 }
-nav ul{
-  list-style: none;
-  float: right;
-}
-nav ul li{
-  display: inline-block;
-}
-nav ul li a{
-
-  text-decoration: none;
-  color: #FFFC20;
-  font-family: sans-serif;
-  font-weight: bold;
-  margin: 0 40px;
-  line-height: 90px;
-  text-transform: uppercase;
-}
 </style>
 
 
@@ -49,10 +32,7 @@ nav ul li a{
 <header>
   <nav>
     <img src="media/LOGO small.png" style="width:600px; height:150px;">
-    <ul>
-<li><a href="">Home</a></li>
-<li><a href="">About</a></li>
-</ul>
+
 </nav>
 </header>
 
